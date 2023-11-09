@@ -7,6 +7,7 @@ Authors@R:
 Description: Perform large-scale high-resolution forest growth simulations.
 License: GPL (>= 3)
 Encoding: UTF-8
+LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
