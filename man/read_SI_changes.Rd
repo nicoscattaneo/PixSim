@@ -14,7 +14,8 @@ This function reads the \code{SI_changes.fst} file, which contains site index ch
 for Norway's main forest species. These changes occur every five years from 2021 onwards
 and match the coordinates in the \code{PixelTable} dataset. The data includes site index
 values corresponding to various years, computed after Antón-Fernández et al. (2016)
-\link{Climate-sensitive site index models for Norway;https://doi.org/10.1139/cjfr-2015-0155}.
+"Climate-sensitive site index models for Norway"
+\url{https://doi.org/10.1139/cjfr-2015-0155}
 }
 \details{
 The dataset is expected to be used in conjunction with \code{PixelTable} as it has the same

@@ -4,7 +4,8 @@
 #' for Norway's main forest species. These changes occur every five years from 2021 onwards
 #' and match the coordinates in the `PixelTable` dataset. The data includes site index
 #' values corresponding to various years, computed after Antón-Fernández et al. (2016)
-#' [Climate-sensitive site index models for Norway;https://doi.org/10.1139/cjfr-2015-0155].
+#' "Climate-sensitive site index models for Norway"
+#' \url{https://doi.org/10.1139/cjfr-2015-0155}
 #'
 #' The dataset is expected to be used in conjunction with `PixelTable` as it has the same
 #' number of rows and the coordinates are aligned. Each column `SI_x` represents the site

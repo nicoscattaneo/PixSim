@@ -36,7 +36,7 @@
 #' \url{https://www.tandfonline.com/doi/full/10.1080/02827581.2022.2056632}
 #'
 #' @examples
-#' # Access the model and parameters for Norway spruce's number of trees per hectare (N)
+#' # Access the model and parameters for Norway spruce number of trees per hectare (N)
 #' ModelsAndParameters$Model.1.N
 #' ModelsAndParameters$Params.1.N
 #'
@@ -47,5 +47,4 @@
 #' # Access the model and parameters for Broadleaves' dominant height (H)
 #' ModelsAndParameters$Model.3.H
 #' ModelsAndParameters$Params.3.H
-#' ... (and so on for each model and species)
 "ModelsAndParameters"
