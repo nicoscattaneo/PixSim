@@ -1,3 +1,59 @@
+#' Stand-Level Growth Simulation
+#'
+#' Performs stand-level growth simulations on a `PixelTable` created from Forest Resource Map rasters.
+#' Users can refer to the `raster2pixeltable` documentation for details on creating a `PixelTable`.
+#' The simulation projects the growth of forest stands over a specified number of time steps.
+#'
+#' @param Data A `data.table` object representing a forest inventory derived from a Forest Resource map.
+#'        See `PixelTable` dataset in the package for table format example.
+#' @param Np An integer indicating the number of projection time steps to simulate.
+#' @param nSpecies A numeric vector specifying the species codes to simulate, corresponding to codes in `Data`.
+#' @param WriteOut Logical; if `TRUE`, simulation results for each time step are saved to `LocalFldr`.
+#' @param LocalFldr A character string specifying the path to a local folder where results should be written,
+#'        used if `WriteOut` is `TRUE`.
+#' @param functions A named list of functions that define the growth models and other operations to be
+#'        applied during the simulation. At minimum, should contain a function for growth modeling.
+#'        Refer to the `GrowthModels` function included in the package.
+#' @param ... Additional arguments to pass to the functions within the `functions` list.
+#'
+#' @details
+#' The `PixSim` function takes a `PixelTable`, the number of simulation periods (`Np`), the species to simulate (`nSpecies`),
+#' and a list of functions (`functions`) that perform various steps in the simulation process. If `WriteOut` is `TRUE`, the
+#' results of each simulation period are saved to disk at the location specified by `LocalFldr`. Extra parameters required
+#' by the functions in `functions` can be passed through the `...` argument.
+#'
+#' @examples
+#' \dontrun{
+#'   PixelTableCopy <- copy(PixelTable)
+#'   Functions <- list(GrowthModels = GrowthModels)
+#'   myMM <- ModelsAndParameters[[1]]
+#'   mySSP <- c(1, 2, 3)
+#'
+#'   Fold <- tempfile()
+#'   unlink(Fold, recursive = TRUE)
+#'   dir.create(Fold)
+#'
+#'   PixSim(Data = PixelTableCopy,
+#'          Np = 15,
+#'          nSpecies = mySSP,
+#'          functions = Functions,
+#'          WriteOut = TRUE,
+#'          LocalFldr = Fold,
+#'          ModelsAndParameters = myMM)
+#'
+#'   Results <- list.files(Fold, full.names = TRUE)
+#'   lapply(Results, fst::read_fst, as.data.table = TRUE)
+#' }
+#'
+#' @export
+#' @importFrom data.table data.table
+#' @importFrom fst write_fst read_fst
+PixSim <- function(Data, Np, nSpecies, WriteOut = FALSE, LocalFldr = NULL, functions, ...) {
+  # function body here
+}
+
+
+
 PixSim <- function(Data, Np, nSpecies, WriteOut = FALSE, LocalFldr = NULL, functions, ...) {
 
     Ellipsis <- list(...)
