@@ -49,12 +49,6 @@
 #' @importFrom data.table data.table
 #' @importFrom fst write_fst read_fst
 PixSim <- function(Data, Np, nSpecies, WriteOut = FALSE, LocalFldr = NULL, functions, ...) {
-  # function body here
-}
-
-
-
-PixSim <- function(Data, Np, nSpecies, WriteOut = FALSE, LocalFldr = NULL, functions, ...) {
 
     Ellipsis <- list(...)
 
