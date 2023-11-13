@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-<img src="inst/extdata/logo.png" align="right" height="196" width="196" />
+<img src="inst/extdata/logo.png" align="right" width="20%" />
 
 # PixSim
 
