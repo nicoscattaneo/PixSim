@@ -32,8 +32,8 @@ library("PixSim")
 ## how to create a PixelTable from forest resource maps.
 PixelTableCopy <- data.table::copy(PixelTable)
 
-## Here we use stand-level growth models of the main 
-## species groups in Norway
+## Here we use a function that implement stand-level 
+## growth models of the main species groups in Norway
 Functions <- list(GrowthModels = GrowthModels)
 
 ## "GrowthModels" function needs equations and parameters to be specified.
@@ -50,7 +50,7 @@ Fold <- tempfile()
 dir.create(Fold)
 
 PixSim(Data = PixelTableCopy,
-       Np = 3,
+       Np = 3, ## 3 5-year projections
        nSpecies = mySSP,
        functions = Functions,
        WriteOut = TRUE,
