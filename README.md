@@ -36,7 +36,7 @@ PixelTableCopy <- data.table::copy(PixelTable)
 ## species groups in Norway
 Functions <- list(GrowthModels = GrowthModels)
 
-## "GrowthModels" functions needs equations and parameters to be specified.
+## "GrowthModels" function needs equations and parameters to be specified.
 args(GrowthModels)
 #> function (Data, ModelsAndParameters, nSpecies) 
 #> NULL
