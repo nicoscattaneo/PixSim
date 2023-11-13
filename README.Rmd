@@ -35,14 +35,20 @@ devtools::install_github("nicoscattaneo/PixSim")
 
 ## Basic usage
 
-Work in progress.
+### Example 1
+Simulate 15 years of forest growth for a 10x20 km region in central Norway using
+the growth models of Maleki et al. (2022). The simulation is conducted in 5-year
+intervals, with the results of each time step saved locally for further analysis.
+For detailed model information, refer to the publication: 
+Maleki et al. 2022, DOI: [https://doi.org/10.1080/02827581.2022.2056632]."
+
 
 ```{r, include=FALSE}
 library("data.table")
 ```
 
 
-```{r example, warning=FALSE}
+```{r example1, warning=FALSE}
 library("PixSim")
 
 ## See below in the Basic usage - Pixeltable section to learn 
@@ -78,16 +84,19 @@ lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
 
 ```
 
+### Example 2
+
 Work in progress.
 
-```{r cars}
+```{r example2}
 ## summary()
 ```
 
+### Example 3
+
 Work in progress.
 
-```{r pressure, echo = FALSE}
+```{r example3, echo = FALSE}
 ## plot()
 ```
 
-Work in progress.
