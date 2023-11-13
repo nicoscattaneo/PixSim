@@ -1,12 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# PixSim
-
 <!-- badges: start -->
 <!-- badges: end -->
 
 <img src="inst/extdata/logo.png" align="right" height="196" width="196" />
+\# PixSim
 
 The goal of PixSim is to … work in progress. Please disregard everything
 written in the “Example” section
