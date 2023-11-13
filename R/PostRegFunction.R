@@ -24,10 +24,10 @@
 #' @importFrom data.table data.table
 #' @examples
 #' \dontrun{
-#'   PixelTableCopy <- copy(PixelTable) # Assuming PixelTable is already initialized and simulated
-#'   RegDataCopy <- copy(RegData) # Assuming RegData is your regeneration dataset
-#'   PostRegFunction(Data = PixelTableCopy, RegData = RegDataCopy)
-#'   # Now PixelTableCopy has adjusted forest inventory variables
+#'  ## PixelTableCopy <- copy(PixelTable) # Assuming PixelTable is already initialized and simulated
+#'  ## RegDataCopy <- copy(RegData) # Assuming RegData is your regeneration dataset
+#'  ## PostRegFunction(Data = PixelTableCopy, RegData = RegDataCopy)
+#'  ## Now PixelTableCopy has adjusted forest inventory variables
 #' }
 #' @seealso \code{\link{PixSim}}, \code{\link{RegFunction}}
 PostRegFunction <- function(Data, RegData) {

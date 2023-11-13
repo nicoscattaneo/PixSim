@@ -33,10 +33,10 @@ simulation's current time step, based on the previously simulated growth and the
 }
 \examples{
 \dontrun{
-  PixelTableCopy <- copy(PixelTable) # Assuming PixelTable is already initialized and simulated
-  RegDataCopy <- copy(RegData) # Assuming RegData is your regeneration dataset
-  PostRegFunction(Data = PixelTableCopy, RegData = RegDataCopy)
-  # Now PixelTableCopy has adjusted forest inventory variables
+ ## PixelTableCopy <- copy(PixelTable) # Assuming PixelTable is already initialized and simulated
+ ## RegDataCopy <- copy(RegData) # Assuming RegData is your regeneration dataset
+ ## PostRegFunction(Data = PixelTableCopy, RegData = RegDataCopy)
+ ## Now PixelTableCopy has adjusted forest inventory variables
 }
 }
 \seealso{
