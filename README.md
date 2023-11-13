@@ -6,9 +6,15 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
+<img src="inst/extdata/logo.png" align="right" height="196" width="196" />
+
+\##
+
 <div style="text-align:right">
 
-<img src="inst/extdata/logo.png" width="20%">
+## <img src="inst/extdata/logo.png" width="20%">
+
+\##
 
 </div>
 
