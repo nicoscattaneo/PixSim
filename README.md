@@ -6,7 +6,11 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-<img src="inst/extdata/logo.png" width="20%" />
+<div style="text-align:right">
+
+<img src="inst/extdata/logo.png" width="20%">
+
+</div>
 
 The goal of PixSim is to … work in progress. Please disregard everything
 written in the “Example” section

@@ -18,9 +18,9 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-```{r logo, echo=FALSE, out.width = "20%"}
-knitr::include_graphics("inst/extdata/logo.png")
-```
+<div style="text-align:right">
+  <img src="inst/extdata/logo.png" width="20%">
+</div>
 
 The goal of PixSim is to ... work in progress. Please disregard everything written in the "Example" section
 
