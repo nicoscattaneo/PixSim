@@ -34,9 +34,9 @@ with Norwegian forest species groups.
 }
 \examples{
 \dontrun{
-# Assuming `Data` is your forest inventory data.table, `myMP` contains
-# the models and parameters, and `mySSP` is the species vector:
-GrowthModels(Data = Data, ModelsAndParameters = myMP, nSpecies = mySSP)
+## Assuming `Data` is your forest inventory data.table, `myMP` contains
+## the models and parameters, and `mySSP` is the species vector:
+## GrowthModels(Data = Data, ModelsAndParameters = myMP, nSpecies = mySSP)
 }
 
 }
