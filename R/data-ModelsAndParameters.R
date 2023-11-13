@@ -24,7 +24,7 @@
 #'   \item{Params.x.B}{Parameters for the B model.}
 #'   \item{Model.x.V}{Model for total standing volume (V).}
 #'   \item{Params.x.V}{Parameters for the V model.}
-#'   \item{Model.x.AgeNew}{Model for estimating age change based SI change.}
+#'   \item{Model.x.AgeNew}{Model for estimating age change based on SI change.}
 #'   \item{Params.x.AgeNew}{Parameters for the AgeNew model.}
 #' }
 #' Replace 'x' with the species number (1, 2, or 3).
