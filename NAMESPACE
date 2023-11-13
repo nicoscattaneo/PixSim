@@ -2,6 +2,7 @@
 
 export(GrowthModels)
 export(PixSim)
+export(RegFunction)
 export(raster2pixeltable)
 export(read_SI_changes)
 importFrom(data.table,":=")
