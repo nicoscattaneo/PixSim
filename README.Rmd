@@ -37,9 +37,33 @@ devtools::install_github("nicoscattaneo/PixSim")
 
 Work in progress.
 
+```{r, include=FALSE}
+library("data.table")
+```
+
+
 ```{r example}
-library(PixSim)
-## basic example code
+library("PixSim")
+
+PixelTableCopy <- copy(PixelTable)
+Functions <- list(GrowthModels = GrowthModels)
+myMM <- ModelsAndParameters[[1]]
+mySSP <- c(1, 2, 3)
+  
+Fold <- tempfile()
+dir.create(Fold)
+  
+PixSim(Data = PixelTableCopy,
+       Np = 15,
+       nSpecies = mySSP,
+       functions = Functions,
+       WriteOut = TRUE,
+       LocalFldr = Fold,
+       ModelsAndParameters = myMM)
+  
+Results <- list.files(Fold, full.names = TRUE)
+lapply(Results, fst::read_fst, as.data.table = TRUE)
+unlink(Fold, recursive = TRUE)
 ```
 
 Work in progress.
