@@ -33,10 +33,10 @@ regeneration. The function matches entries in \code{RegData} with the correspond
 }
 \examples{
 \dontrun{
-  PixelTableCopy <- copy(PixelTable)
-  RegDataCopy <- copy(RegData)
-  RegFunction(Data = PixelTableCopy, RegData = RegDataCopy)
-  # Now PixelTableCopy contains the initial regeneration data
+ ## PixelTableCopy <- copy(PixelTable)
+ ## RegDataCopy <- copy(RegData)
+ ## RegFunction(Data = PixelTableCopy, RegData = RegDataCopy)
+ ## Now PixelTableCopy contains the initial regeneration data
 }
 }
 \seealso{

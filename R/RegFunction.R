@@ -24,10 +24,10 @@
 #' @importFrom data.table data.table
 #' @examples
 #' \dontrun{
-#'   PixelTableCopy <- copy(PixelTable)
-#'   RegDataCopy <- copy(RegData)
-#'   RegFunction(Data = PixelTableCopy, RegData = RegDataCopy)
-#'   # Now PixelTableCopy contains the initial regeneration data
+#'  ## PixelTableCopy <- copy(PixelTable)
+#'  ## RegDataCopy <- copy(RegData)
+#'  ## RegFunction(Data = PixelTableCopy, RegData = RegDataCopy)
+#'  ## Now PixelTableCopy contains the initial regeneration data
 #' }
 #' @seealso \code{\link{PixSim}}, \code{\link[=RegData]{RegData dataset}}
 RegFunction <- function(Data, RegData) {
