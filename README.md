@@ -28,14 +28,27 @@ Work in progress.
 ``` r
 library("PixSim")
 
+## See below in the Basic usage - Pixeltable section to learn 
+## how to create a PixelTable from forest resource maps.
 PixelTableCopy <- data.table::copy(PixelTable)
+
+## Here we use stand-level growth models of the main 
+## species groups in Norway
 Functions <- list(GrowthModels = GrowthModels)
+
+## "GrowthModels" functions needs equations and parameters to be specified.
+args(GrowthModels)
+#> function (Data, ModelsAndParameters, nSpecies) 
+#> NULL
 myMM <- ModelsAndParameters[[1]]
+
+## Species codes
 mySSP <- c(1, 2, 3)
-  
+
+## A local folder where simulation results should be written.
 Fold <- tempfile()
 dir.create(Fold)
-  
+
 PixSim(Data = PixelTableCopy,
        Np = 3,
        nSpecies = mySSP,
@@ -43,7 +56,8 @@ PixSim(Data = PixelTableCopy,
        WriteOut = TRUE,
        LocalFldr = Fold,
        ModelsAndParameters = myMM)
-  
+
+## Check the results
 Results <- list.files(Fold, full.names = TRUE)
 lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
 #> [[1]]
@@ -77,7 +91,6 @@ lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
 #> 3: 22.71 390.87  22.60 212.15  97
 #> 4: 23.24 533.78  29.10 288.68 100
 #> 5: 23.79 472.04  27.57 266.30 106
-unlink(Fold, recursive = TRUE)
 ```
 
 Work in progress.
