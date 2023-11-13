@@ -42,7 +42,7 @@ library("data.table")
 ```
 
 
-```{r example}
+```{r example, warning=FALSE}
 library("PixSim")
 
 PixelTableCopy <- data.table::copy(PixelTable)

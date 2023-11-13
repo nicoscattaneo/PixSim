@@ -43,7 +43,6 @@ PixSim(Data = PixelTableCopy,
        WriteOut = TRUE,
        LocalFldr = Fold,
        ModelsAndParameters = myMM)
-#> Warning: package 'fstcore' was built under R version 4.3.2
   
 Results <- list.files(Fold, full.names = TRUE)
 lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
