@@ -12,7 +12,7 @@
 #' @param LocalFldr A character string specifying the path to a local folder where results should be written,
 #'        used if `WriteOut` is `TRUE`.
 #' @param functions A named list of functions that define the growth models and other operations to be
-#'        applied during the simulation. At minimum, should contain a function for growth modeling.
+#'        applied during the simulation. At minimum, should contain a function with a forest growth model.
 #'        Refer to the `GrowthModels` function included in the package.
 #' @param ... Additional arguments to pass to the functions within the `functions` list.
 #'

@@ -20,7 +20,7 @@ See \code{PixelTable} dataset in the package for table format example.}
 used if \code{WriteOut} is \code{TRUE}.}
 
 \item{functions}{A named list of functions that define the growth models and other operations to be
-applied during the simulation. At minimum, should contain a function for growth modeling.
+applied during the simulation. At minimum, should contain a function with a forest growth model.
 Refer to the \code{GrowthModels} function included in the package.}
 
 \item{...}{Additional arguments to pass to the functions within the \code{functions} list.}
