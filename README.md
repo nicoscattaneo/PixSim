@@ -4,7 +4,8 @@
 <!-- badges: end -->
 
 <img src="inst/extdata/logo.png" align="right" height="196" width="196" />
-\# PixSim
+
+# PixSim
 
 The goal of PixSim is to … work in progress. Please disregard everything
 written in the “Example” section
