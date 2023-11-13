@@ -30,13 +30,13 @@ with an \code{envRestr} flag in the \code{Data} table, where a value of 1 indica
 }
 \examples{
 \dontrun{
-  # Assuming `Data` is your forest inventory data.table
+  ## Assuming `Data` is your forest inventory data.table
   ## Make a `SetAsideFile` file by labeling 20\% of the pixels in the forest inventory data:
 
-  library("data.table")
-  SetAsidePxls <- data.table(toSetAside = rep(0, nrow(Data)))
-  SetAsidePxls[sample(1:nrow(SetAsidePxls), nrow(SetAsidePxls) * 0.20), toSetAside := 1]
-  fst::save_fst(SetAsidePxls, "SetAsideFile.fst")
+  # library("data.table")
+  # SetAsidePxls <- data.table(toSetAside = rep(0, nrow(Data)))
+  # SetAsidePxls[sample(1:nrow(SetAsidePxls), nrow(SetAsidePxls) * 0.20), toSetAside := 1]
+  # fst::save_fst(SetAsidePxls, "SetAsideFile.fst")
 
   SetAside(Data, SetAsideFile = "SetAsideFile.fst")
 }
