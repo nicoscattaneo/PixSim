@@ -24,7 +24,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'   PixelTableCopy <- copy(PixelTable)
+#'   PixelTableCopy <- data.table::copy(PixelTable)
 #'   Functions <- list(GrowthModels = GrowthModels)
 #'   myMM <- ModelsAndParameters[[1]]
 #'   mySSP <- c(1, 2, 3)

@@ -38,7 +38,7 @@ by the functions in \code{functions} can be passed through the \code{...} argume
 }
 \examples{
 \dontrun{
-  PixelTableCopy <- copy(PixelTable)
+  PixelTableCopy <- data.table::copy(PixelTable)
   Functions <- list(GrowthModels = GrowthModels)
   myMM <- ModelsAndParameters[[1]]
   mySSP <- c(1, 2, 3)

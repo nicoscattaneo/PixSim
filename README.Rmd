@@ -45,7 +45,7 @@ library("data.table")
 ```{r example}
 library("PixSim")
 
-PixelTableCopy <- copy(PixelTable)
+PixelTableCopy <- data.table::copy(PixelTable)
 Functions <- list(GrowthModels = GrowthModels)
 myMM <- ModelsAndParameters[[1]]
 mySSP <- c(1, 2, 3)
@@ -54,7 +54,7 @@ Fold <- tempfile()
 dir.create(Fold)
   
 PixSim(Data = PixelTableCopy,
-       Np = 15,
+       Np = 3,
        nSpecies = mySSP,
        functions = Functions,
        WriteOut = TRUE,
@@ -62,7 +62,7 @@ PixSim(Data = PixelTableCopy,
        ModelsAndParameters = myMM)
   
 Results <- list.files(Fold, full.names = TRUE)
-lapply(Results, fst::read_fst, as.data.table = TRUE)
+lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
 unlink(Fold, recursive = TRUE)
 ```
 
