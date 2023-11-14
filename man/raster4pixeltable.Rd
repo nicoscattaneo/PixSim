@@ -34,18 +34,18 @@ Names <- sapply(strsplit(basename(Files), "\\\\."), `[`, 1)
 \dontrun{
 # Example code to read and plot the Site Index raster
 # Requires the 'terra' package, which is suggested but not required
-library(terra)
-SI_raster <- rast(file.path(Dir, "SI_m.tif"))
-plot(SI_raster)
+# library(terra)
+# SI_raster <- rast(file.path(Dir, "SI_m.tif"))
+# plot(SI_raster)
 
 # Illustrative example to construct PixelTable from rasters
-Files <- lapply(Files, function(XX){
-  as.data.frame(rast(XX), xy = TRUE)[, 1:3]
-})
-Files <- Reduce(function(...) merge(..., all = FALSE), Files)
-names(Files) <- c("x_UTM32", "y_UTM32", Names)
-Files$H_m <- Files$H_dm * 0.1
-Files$H_dm <- NULL
-head(Files)
-}
+# Files <- lapply(Files, function(XX){
+#  as.data.frame(rast(XX), xy = TRUE)[, 1:3]
+# })
+# Files <- Reduce(function(...) merge(..., all = FALSE), Files)
+# names(Files) <- c("x_UTM32", "y_UTM32", Names)
+# Files$H_m <- Files$H_dm * 0.1
+# Files$H_dm <- NULL
+# head(Files)
+# }
 }
