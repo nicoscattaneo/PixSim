@@ -162,8 +162,12 @@ the `ManagementFunction` is applied. For example, for the first time step (001),
 the following files are generated
 
 ```{r example32, warning=FALSE}
-Results <- list.files(Fold, full.names = TRUE, pattern = "001")
+Results <- list.files(Fold, pattern = "001")
 Results
+```
+
+```{r example322, warning=FALSE, include = FALSE}
+Results <- list.files(Fold, full.names = T, pattern = "001")
 ```
 
 

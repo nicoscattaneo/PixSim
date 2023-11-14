@@ -176,11 +176,9 @@ Three different files per simulation period are generated when the
 (001), the following files are generated
 
 ``` r
-Results <- list.files(Fold, full.names = TRUE, pattern = "001")
+Results <- list.files(Fold, pattern = "001")
 Results
-#> [1] "C:\\Users\\nica\\AppData\\Local\\Temp\\2\\RtmpWajyeJ\\file20344d1077b7/DataPred_0001.fst" 
-#> [2] "C:\\Users\\nica\\AppData\\Local\\Temp\\2\\RtmpWajyeJ\\file20344d1077b7/SR16Pred02_001.fst"
-#> [3] "C:\\Users\\nica\\AppData\\Local\\Temp\\2\\RtmpWajyeJ\\file20344d1077b7/SR16Pred03_001.fst"
+#> [1] "DataPred_0001.fst"  "SR16Pred02_001.fst" "SR16Pred03_001.fst"
 ```
 
 - The first file contains the simulated/projected forest data.
