@@ -75,9 +75,84 @@ PixSim(Data = PixelTableCopy,
 Work in progress.
 
 ``` r
-## summary()
+## Some code
 ```
 
 ### Example 3
 
 Work in progress.
+
+### Pixeltable
+
+A PixelTable is a dataframe-like object that groups data from various
+maps containing forest resource information. It is a highly useful
+format that offers flexibility for performing complex operations on the
+information contained in the maps.
+
+PixSim package contains raster files describing various forest resource
+variables in a 10x20 km region in central Norway. Similar raster maps
+for other regions in Norway can be obtained from [Kilden –\>
+Skogressurskart (SR16)](https://kilden.nibio.no/).
+
+    #> $Names
+    #> [1] "Age"     "B_m2ha"  "H_dm"    "N"       "SI_m"    "Species" "Stand"  
+    #> [8] "V_m3ha" 
+    #> 
+    #> $Paths
+    #> [1] "C:/Users/nica/AppData/Local/Temp/2/Rtmpc9MWcg/temp_libpath1d406e692c72/PixSim/extdata/Age.tif"    
+    #> [2] "C:/Users/nica/AppData/Local/Temp/2/Rtmpc9MWcg/temp_libpath1d406e692c72/PixSim/extdata/B_m2ha.tif" 
+    #> [3] "C:/Users/nica/AppData/Local/Temp/2/Rtmpc9MWcg/temp_libpath1d406e692c72/PixSim/extdata/H_dm.tif"   
+    #> [4] "C:/Users/nica/AppData/Local/Temp/2/Rtmpc9MWcg/temp_libpath1d406e692c72/PixSim/extdata/N.tif"      
+    #> [5] "C:/Users/nica/AppData/Local/Temp/2/Rtmpc9MWcg/temp_libpath1d406e692c72/PixSim/extdata/SI_m.tif"   
+    #> [6] "C:/Users/nica/AppData/Local/Temp/2/Rtmpc9MWcg/temp_libpath1d406e692c72/PixSim/extdata/Species.tif"
+    #> [7] "C:/Users/nica/AppData/Local/Temp/2/Rtmpc9MWcg/temp_libpath1d406e692c72/PixSim/extdata/Stand.tif"  
+    #> [8] "C:/Users/nica/AppData/Local/Temp/2/Rtmpc9MWcg/temp_libpath1d406e692c72/PixSim/extdata/V_m3ha.tif"
+
+Read and plot the Site Index raster.
+
+    #> Warning: package 'terra' was built under R version 4.3.2
+    #> terra 1.7.55
+    #> 
+    #> Attaching package: 'terra'
+    #> The following object is masked from 'package:data.table':
+    #> 
+    #>     shift
+
+<img src="man/figures/README-Pixeltable2-1.png" width="100%" />
+
+IMPORTANT NOTICE: Prior to the assembly of the PixelTable, it is
+essential to ensure that all raster images are precisely aligned. In
+instances where alignment is not accurate, employing tools such as
+[gdalwarp](https://gdal.org/programs/gdalwarp.html) can be instrumental
+in facilitating this critical alignment process.
+
+    #> [1] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    #> [2] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    #> [3] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    #> [4] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    #> [5] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    #> [6] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    #> [7] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    #> [8] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    #>      [,1] [,2] [,3]
+    #> [1,] 1250  625    1
+    #> [2,] 1250  625    1
+    #> [3,] 1250  625    1
+    #> [4,] 1250  625    1
+    #> [5,] 1250  625    1
+    #> [6,] 1250  625    1
+    #> [7,] 1250  625    1
+    #> [8,] 1250  625    1
+
+Make the PixelTable
+
+    #> [1] 661521     10
+    #>   x_UTM32 y_UTM32 Age B_m2ha   N SI_m Species   Stand V_m3ha  H_m
+    #> 1  664232 6748520  71     20 514   14       2 1093264    170 19.3
+    #> 2  664232 6748536  65     21 578   14       2 1093264    175 18.4
+    #> 3  664232 6748552  82     19 436   14       2 1093264    172 20.9
+    #> 4  664232 6748568  85     25 596   14       2 1093264    241 21.5
+    #> 5  664232 6748584  91     24 528   14       2 1093264    224 22.2
+    #> 6  664232 6748600  76     21 543   14       2 1093264    195 20.1
+
+This PixelTable is ready for use within the PixSim framework.

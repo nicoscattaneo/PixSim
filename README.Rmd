@@ -84,7 +84,7 @@ PixSim(Data = PixelTableCopy,
 Work in progress.
 
 ```{r example2}
-## summary()
+## Some code
 ```
 
 ### Example 3
@@ -92,6 +92,68 @@ Work in progress.
 Work in progress.
 
 ```{r example3, echo = FALSE}
-## plot()
+## Some code
 ```
+
+### Pixeltable
+A PixelTable is a dataframe-like object that groups data from various maps 
+containing forest resource information. It is a highly useful format that 
+offers flexibility for performing complex operations on the information 
+contained in the maps.
+
+
+PixSim package contains raster files describing various forest resource 
+variables in a 10x20 km region in central Norway. Similar raster maps for 
+other regions in Norway can be obtained from 
+[Kilden -->  Skogressurskart (SR16)](https://kilden.nibio.no/).
+
+```{r Pixeltable1, echo = FALSE}
+Dir <- system.file("extdata", package = "PixSim")
+Files <- list.files(Dir, full.names = TRUE, pattern = "\\.tif$")
+Names <- sapply(strsplit(basename(Files), "\\."), `[`, 1)
+list(Names = Names, Paths = Files)
+```
+
+Read and plot the Site Index raster.
+```{r Pixeltable2, echo = FALSE}
+library(terra)
+SI_raster <- rast(file.path(Dir, "SI_m.tif"))
+plot(SI_raster, main = "Site Index (m)")
+```
+
+IMPORTANT NOTICE: Prior to the assembly of the PixelTable, it is essential to 
+ensure that all raster images are precisely aligned. In instances where 
+alignment is not accurate, employing tools such as 
+[gdalwarp](https://gdal.org/programs/gdalwarp.html) can be instrumental 
+in facilitating this critical alignment process.
+
+```{r Pixeltable3, echo = FALSE}
+library(terra)
+## Check rasters alignment
+unlist(lapply(lapply(Files, rast), crs, proj = TRUE))
+## Check raster size
+do.call("rbind", lapply(lapply(Files, rast), dim))
+```
+
+Make the PixelTable
+
+```{r Pixeltable4, echo = FALSE}
+PixeTable1 <- lapply(Files, function(XX){
+    as.data.frame(rast(XX), xy = TRUE)[, 1:3]
+})
+PixeTable1 <- Reduce(function(...) merge(..., all = FALSE), PixeTable1)
+names(PixeTable1) <- c("x_UTM32", "y_UTM32", Names)
+PixeTable1$H_m <- PixeTable1$H_dm * 0.1
+PixeTable1$H_dm <- NULL
+dim(PixeTable1)
+head(PixeTable1)
+```
+
+This PixelTable is ready for use within the PixSim framework.
+
+
+
+
+
+
 
