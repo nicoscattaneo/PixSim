@@ -30,7 +30,7 @@ Norway using stand-level growth models of the main species groups in
 Norway. The simulation is conducted in 5-year intervals, with the
 results of each time step saved locally for further analysis. For
 detailed model information, see [Maleki et
-al. 2022](DOI:%20%5Bhttps://doi.org/10.1080/02827581.2022.2056632%5D).
+al. 2022](https://doi.org/10.1080/02827581.2022.2056632).
 
 ``` r
 library("PixSim")
