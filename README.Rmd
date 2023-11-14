@@ -34,7 +34,7 @@ You can install the development version of PixSim from [GitHub](https://github.c
 devtools::install_github("nicoscattaneo/PixSim")
 ```
 
-## Basic usage
+## General usage
 
 ### Example 1
 Simulate 15 years of forest growth for a 10x20 km region in central Norway using
@@ -81,6 +81,8 @@ PixSim(Data = PixelTable,
 
 ```
 
+---
+
 ### Example 2
 There are also functions available to initialize pixels after the forest has been harvested:
 
@@ -104,16 +106,22 @@ PixSim(Data = PixelTable,
        LocalFldr = Fold,
        ModelsAndParameters = myMM,
        RegData = RegData)
+
 ## Check the results
 ## Results <- list.files(Fold, full.names = TRUE)
 ## lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
 ```
 
+---
+
 ### Example 3
 
-Apply management
+Harvest 80% of the total volume increase per time step. The `SetAside` function 
+is also used to conserve 20% of each forest stand that is never harvested.
 
 ```{r example3, warning=FALSE}
+## See `?ManagementFunction` and `?SetAside` for a detailed description of 
+## these functions.
 Functions <- list(GrowthModels = GrowthModels,
                   RegFunction = RegFunction, 
                   PostRegFunction = PostRegFunction,
@@ -139,6 +147,46 @@ PixSim(Data = PixelTable,
 
 ```
 
+<ins>Results</ins>
+
+A copy of the initial PixelTable
+```{r example31, warning=FALSE}
+Results <- list.files(Fold, full.names = TRUE, pattern = "000.fst")
+lapply(Results, fst::read_fst,
+       as.data.table = TRUE, from = 1, to = 5)
+
+```
+
+Three different files per simulation period are generated when 
+the `ManagementFunction` is applied. For example, for the first time step (001), 
+the following files are generated
+
+```{r example32, warning=FALSE}
+Results <- list.files(Fold, full.names = TRUE, pattern = "001")
+Results
+```
+
+
+- The first file contains the simulated/projected forest data.
+```{r example33, warning=FALSE}
+fst::read_fst(Results[1], as.data.table = TRUE, from = 1, to = 5)
+```
+
+- The second file includes details on the harvesting objective (volumeGrowthCut) 
+and the total volume harvested (in cubic meters).
+```{r example34, warning=FALSE}
+fst::read_fst(Results[2], as.data.table = TRUE, from = 1, to = 5)
+```
+
+- The third file contains a data.table, with columns for Stand ID (Stand), the 
+mean and total volume per stand (mVol_m3ha and TVol_m3), the proportion of each 
+species in the total volume (TVol_m3), and a column indicating whether a 
+particular stand has been harvested (Cut = 1) or not (Cut = 0).
+```{r example35, warning=FALSE}
+fst::read_fst(Results[3], as.data.table = TRUE, from = 1, to = 5)
+```
+
+---
 
 ### Pixeltable
 A PixelTable is a dataframe-like object that groups pixel-level information 

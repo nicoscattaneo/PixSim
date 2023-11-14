@@ -23,7 +23,7 @@ You can install the development version of PixSim from
 devtools::install_github("nicoscattaneo/PixSim")
 ```
 
-## Basic usage
+## General usage
 
 ### Example 1
 
@@ -78,6 +78,8 @@ PixSim(Data = PixelTable,
 ## lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
 ```
 
+------------------------------------------------------------------------
+
 ### Example 2
 
 There are also functions available to initialize pixels after the forest
@@ -103,16 +105,23 @@ PixSim(Data = PixelTable,
        LocalFldr = Fold,
        ModelsAndParameters = myMM,
        RegData = RegData)
+
 ## Check the results
 ## Results <- list.files(Fold, full.names = TRUE)
 ## lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
 ```
 
+------------------------------------------------------------------------
+
 ### Example 3
 
-Apply management
+Harvest 80% of the total volume increase per time step. The `SetAside`
+function is also used to conserve 20% of each forest stand that is never
+harvested.
 
 ``` r
+## See `?ManagementFunction` and `?SetAside` for a detailed description of 
+## these functions.
 Functions <- list(GrowthModels = GrowthModels,
                   RegFunction = RegFunction, 
                   PostRegFunction = PostRegFunction,
@@ -136,6 +145,82 @@ PixSim(Data = PixelTable,
        Harvest = 80, 
        PixelSize = (16*16))
 ```
+
+<ins>
+Results
+</ins>
+
+A copy of the initial PixelTable
+
+``` r
+Results <- list.files(Fold, full.names = TRUE, pattern = "000.fst")
+lapply(Results, fst::read_fst,
+       as.data.table = TRUE, from = 1, to = 5)
+#> [[1]]
+#>    x_UTM32 y_UTM32 Age B_m2ha   N SI_m Species   Stand V_m3ha  H_m code
+#> 1:  664232 6748520  71     20 514   14       2 1093264    170 19.3    1
+#> 2:  664232 6748536  65     21 578   14       2 1093264    175 18.4    1
+#> 3:  664232 6748552  82     19 436   14       2 1093264    172 20.9    1
+#> 4:  664232 6748568  85     25 596   14       2 1093264    241 21.5    1
+#> 5:  664232 6748584  91     24 528   14       2 1093264    224 22.2    1
+#>    envRestr
+#> 1:        1
+#> 2:        1
+#> 3:        1
+#> 4:        1
+#> 5:        0
+```
+
+Three different files per simulation period are generated when the
+`ManagementFunction` is applied. For example, for the first time step
+(001), the following files are generated
+
+``` r
+Results <- list.files(Fold, full.names = TRUE, pattern = "001")
+Results
+#> [1] "C:\\Users\\nica\\AppData\\Local\\Temp\\2\\RtmpWajyeJ\\file20344d1077b7/DataPred_0001.fst" 
+#> [2] "C:\\Users\\nica\\AppData\\Local\\Temp\\2\\RtmpWajyeJ\\file20344d1077b7/SR16Pred02_001.fst"
+#> [3] "C:\\Users\\nica\\AppData\\Local\\Temp\\2\\RtmpWajyeJ\\file20344d1077b7/SR16Pred03_001.fst"
+```
+
+- The first file contains the simulated/projected forest data.
+
+``` r
+fst::read_fst(Results[1], as.data.table = TRUE, from = 1, to = 5)
+#>      H_m      N B_m2ha V_m3ha Age
+#> 1: 20.07 496.68  21.63 186.72  76
+#> 2: 19.25 559.13  22.92 194.03  70
+#> 3: 21.55 420.64  20.26 185.66  87
+#> 4: 22.12 574.80  26.44 257.32  90
+#> 5: 22.77 508.89  25.25 238.51  96
+```
+
+- The second file includes details on the harvesting objective
+  (volumeGrowthCut) and the total volume harvested (in cubic meters).
+
+``` r
+fst::read_fst(Results[2], as.data.table = TRUE, from = 1, to = 5)
+#>    volumeGrowthCut volumeGrowthCutPerc
+#> 1:        200415.1                 80%
+```
+
+- The third file contains a data.table, with columns for Stand ID
+  (Stand), the mean and total volume per stand (mVol_m3ha and TVol_m3),
+  the proportion of each species in the total volume (TVol_m3), and a
+  column indicating whether a particular stand has been harvested (Cut
+  = 1) or not (Cut = 0).
+
+``` r
+fst::read_fst(Results[3], as.data.table = TRUE, from = 1, to = 5)
+#>      Stand mVol_m3ha  TVol_m3 Species_1  Species_2 Species_3 Cut
+#> 1:   29485  698.6600 143.0856 1.0000000 0.00000000         0   1
+#> 2:  686275  698.4567 214.5659 1.0000000 0.00000000         0   1
+#> 3:  323830  607.6183 108.8852 0.7920831 0.20791694         0   1
+#> 4: 1235638  606.8028 279.6147 0.9199772 0.08002284         0   1
+#> 5:  542402  591.2865 378.4233 0.9365843 0.06341567         0   1
+```
+
+------------------------------------------------------------------------
 
 ### Pixeltable
 

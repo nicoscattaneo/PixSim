@@ -17,7 +17,9 @@
 #' @details
 #' The `ManagementFunction` function is intended to be called within the `PixSim` function. It reads
 #' the growth increment from the simulation data and applies a harvesting rule based on the `Harvest`
-#' parameter. The function adjusts the forest inventory in `Data` to reflect the harvesting by setting
+#' parameter. Harvesting is conducted at the midpoint of the simulation period. That is, if the start
+#' of the simulation period is T0 and the end is T1, the harvesting occurs at T0.5.
+#' The function adjusts the forest inventory in `Data` to reflect the harvesting by setting
 #' the harvested stands' attributes to zero. It also optionally writes the harvesting results to disk.
 #'
 #' @return The function modifies `Data` by reference, updating the attributes to reflect the harvested

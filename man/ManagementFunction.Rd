@@ -43,7 +43,9 @@ stopping once the harvest objective is reached.
 \details{
 The \code{ManagementFunction} function is intended to be called within the \code{PixSim} function. It reads
 the growth increment from the simulation data and applies a harvesting rule based on the \code{Harvest}
-parameter. The function adjusts the forest inventory in \code{Data} to reflect the harvesting by setting
+parameter. Harvesting is conducted at the midpoint of the simulation period. That is, if the start
+of the simulation period is T0 and the end is T1, the harvesting occurs at T0.5.
+The function adjusts the forest inventory in \code{Data} to reflect the harvesting by setting
 the harvested stands' attributes to zero. It also optionally writes the harvesting results to disk.
 }
 \examples{
