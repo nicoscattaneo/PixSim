@@ -111,7 +111,7 @@ list(Names = Names,
 #> [7] "/PixSim/extdata/Stand.tif"   "/PixSim/extdata/V_m3ha.tif"
 ```
 
-Read and plot the Site Index raster.
+Read and plot the Site Index (SI_m) raster.
 
 ``` r
 library(terra)

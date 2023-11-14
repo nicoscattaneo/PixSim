@@ -116,7 +116,7 @@ list(Names = Names,
      Paths = substring(Files, regexpr("/PixSim", Files), 1000))
 ```
 
-Read and plot the Site Index raster.
+Read and plot the Site Index (SI_m) raster.
 ```{r Pixeltable2, warning=FALSE}
 library(terra)
 SI_raster <- rast(file.path(Dir, "SI_m.tif"))
