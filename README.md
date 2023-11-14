@@ -9,7 +9,10 @@
 
 ## Overview
 
-Work in progress.
+**PixSim** is a flexible, cross-platform, open-source platform designed
+for stand-level forest growth simulations. It operates at the pixel
+level using high-resolution, wall-to-wall forest resource maps. (Work in
+progress…)
 
 ## Installation
 
@@ -99,6 +102,7 @@ for other regions in Norway can be obtained from [Kilden –\>
 Skogressurskart (SR16)](https://kilden.nibio.no/).
 
 ``` r
+## See `?raster4pixeltable` for a detailed description of this dataset.
 Dir <- system.file("extdata", package = "PixSim")
 Files <- list.files(Dir, full.names = TRUE, pattern = "\\.tif$")
 Names <- sapply(strsplit(basename(Files), "\\."), `[`, 1)
