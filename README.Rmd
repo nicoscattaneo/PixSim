@@ -21,11 +21,9 @@ knitr::opts_chunk$set(
 # PixSim
 
 ## Overview
-**PixSim** is a flexible, cross-platform, open-source platform designed 
+**PixSim** is a flexible, cross-platform, open-source tool designed 
 for stand-level forest growth simulations. It operates at the pixel level 
 using high-resolution, wall-to-wall forest resource maps.
-(Work in progress...)
-
 
 ## Installation
 

@@ -9,10 +9,9 @@
 
 ## Overview
 
-**PixSim** is a flexible, cross-platform, open-source platform designed
-for stand-level forest growth simulations. It operates at the pixel
-level using high-resolution, wall-to-wall forest resource maps. (Work in
-progress…)
+**PixSim** is a flexible, cross-platform, open-source tool designed for
+stand-level forest growth simulations. It operates at the pixel level
+using high-resolution, wall-to-wall forest resource maps.
 
 ## Installation
 
