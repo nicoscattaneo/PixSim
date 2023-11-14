@@ -40,7 +40,13 @@ library("data.table")
 
 ## See below in the "Basic usage - Pixeltable" section to learn 
 ## how to create a PixelTable from forest resource maps.
-PixelTableCopy <- data.table::copy(PixelTable)
+head(PixelTable, 3)
+#>    x_UTM32 y_UTM32 Age B_m2ha   N SI_m Species   Stand V_m3ha  H_m
+#> 1:  664232 6748520  71     20 514   14       2 1093264    170 19.3
+#> 2:  664232 6748536  65     21 578   14       2 1093264    175 18.4
+#> 3:  664232 6748552  82     19 436   14       2 1093264    172 20.9
+dim(PixelTable)
+#> [1] 661521     10
 
 ## Here we use a function that implement stand-level 
 ## growth models of the main species groups in Norway
@@ -59,7 +65,7 @@ mySSP <- c(1, 2, 3)
 Fold <- tempfile()
 dir.create(Fold)
 
-PixSim(Data = PixelTableCopy,
+PixSim(Data = PixelTable,
        Np = 3, ## 3 5-year projections
        nSpecies = mySSP,
        functions = Functions,
