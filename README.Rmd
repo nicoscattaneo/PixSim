@@ -107,15 +107,16 @@ variables in a 10x20 km region in central Norway. Similar raster maps for
 other regions in Norway can be obtained from 
 [Kilden -->  Skogressurskart (SR16)](https://kilden.nibio.no/).
 
-```{r Pixeltable1, echo = FALSE}
+```{r Pixeltable1, warning=FALSE}
 Dir <- system.file("extdata", package = "PixSim")
 Files <- list.files(Dir, full.names = TRUE, pattern = "\\.tif$")
 Names <- sapply(strsplit(basename(Files), "\\."), `[`, 1)
-list(Names = Names, Paths = Files)
+list(Names = Names, 
+     Paths = substring(Files, regexpr("/PixSim", Files), 1000))
 ```
 
 Read and plot the Site Index raster.
-```{r Pixeltable2, echo = FALSE}
+```{r Pixeltable2, warning=FALSE, out.width='50%'}
 library(terra)
 SI_raster <- rast(file.path(Dir, "SI_m.tif"))
 plot(SI_raster, main = "Site Index (m)")
@@ -127,7 +128,7 @@ alignment is not accurate, employing tools such as
 [gdalwarp](https://gdal.org/programs/gdalwarp.html) can be instrumental 
 in facilitating this critical alignment process.
 
-```{r Pixeltable3, echo = FALSE}
+```{r Pixeltable3, warning=FALSE}
 library(terra)
 ## Check rasters alignment
 unlist(lapply(lapply(Files, rast), crs, proj = TRUE))
@@ -137,7 +138,7 @@ do.call("rbind", lapply(lapply(Files, rast), dim))
 
 Make the PixelTable
 
-```{r Pixeltable4, echo = FALSE}
+```{r Pixeltable4, warning=FALSE}
 PixeTable1 <- lapply(Files, function(XX){
     as.data.frame(rast(XX), xy = TRUE)[, 1:3]
 })
