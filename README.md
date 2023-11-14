@@ -3,7 +3,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-<img src="inst/extdata/logo.png" align="right" width="20%" />
+<img src="inst/extdata/logo.png" align="right" width="25%" />
 
 # PixSim
 
@@ -34,8 +34,9 @@ al. 2022](https://doi.org/10.1080/02827581.2022.2056632).
 
 ``` r
 library("PixSim")
+library("data.table")
 
-## See below in the Basic usage - Pixeltable section to learn 
+## See below in the "Basic usage - Pixeltable" section to learn 
 ## how to create a PixelTable from forest resource maps.
 PixelTableCopy <- data.table::copy(PixelTable)
 

@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-<img src="inst/extdata/logo.png" align="right" width="20%" />
+<img src="inst/extdata/logo.png" align="right" width="25%" />
 
 # PixSim
 
@@ -42,16 +42,11 @@ is conducted in 5-year intervals, with the results of each time step saved
 locally for further analysis.
 For detailed model information, see [Maleki et al. 2022](https://doi.org/10.1080/02827581.2022.2056632).
 
-
-```{r, include=FALSE}
-library("data.table")
-```
-
-
 ```{r example1, warning=FALSE}
 library("PixSim")
+library("data.table")
 
-## See below in the Basic usage - Pixeltable section to learn 
+## See below in the "Basic usage - Pixeltable" section to learn 
 ## how to create a PixelTable from forest resource maps.
 PixelTableCopy <- data.table::copy(PixelTable)
 
