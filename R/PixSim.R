@@ -1,7 +1,7 @@
 #' Stand-Level Growth Simulation
 #'
 #' Performs stand-level growth simulations on a `PixelTable` created from Forest Resource Map rasters.
-#' Users can refer to the `raster2pixeltable` documentation for details on creating a `PixelTable`.
+#' Users can refer to the `raster4pixeltable` documentation for details on creating a `PixelTable`.
 #' The simulation projects the growth of forest stands over a specified number of time steps.
 #'
 #' @param Data A `data.table` object representing a forest inventory derived from a Forest Resource map.

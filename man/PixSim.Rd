@@ -27,7 +27,7 @@ Refer to the \code{GrowthModels} function included in the package.}
 }
 \description{
 Performs stand-level growth simulations on a \code{PixelTable} created from Forest Resource Map rasters.
-Users can refer to the \code{raster2pixeltable} documentation for details on creating a \code{PixelTable}.
+Users can refer to the \code{raster4pixeltable} documentation for details on creating a \code{PixelTable}.
 The simulation projects the growth of forest stands over a specified number of time steps.
 }
 \details{

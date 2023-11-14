@@ -1,4 +1,4 @@
-#' @name raster2pixeltable
+#' @name raster4pixeltable
 #' @title Norwegian Forest Resource Rasters
 #' @description
 #' Raster files describing various forest resource variables in a 10x20 km region
@@ -42,7 +42,7 @@
 #' Files$H_dm <- NULL
 #' head(Files)
 #' }
-raster2pixeltable <- function() {
+raster4pixeltable <- function() {
   Dir <- system.file("extdata", package = "PixSim")
   Files <- list.files(Dir, full.names = TRUE, pattern = "\\.tif$")
   Names <- sapply(strsplit(basename(Files), "\\."), `[`, 1)

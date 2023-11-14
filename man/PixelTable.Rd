@@ -33,6 +33,6 @@ remote-sensing-based Forest Management Inventories. It represents a 10x20 km
 region in central Norway with pixel resolution of 16x16 m, and it includes
 variables that describe the forest's age, basal area, number of trees, site
 index, species, stand ID, standing volume, and height. For more information on
-building this table from raster data, see \code{\link{raster2pixeltable}} in this package.
+building this table from raster data, see \code{\link{raster4pixeltable}} in this package.
 }
 \keyword{datasets}
