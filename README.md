@@ -149,7 +149,7 @@ list(Names = Names,
 Read and plot the Site Index (SI_m) raster.
 
 ``` r
-library(terra)
+library("terra")
 #> terra 1.7.55
 #> 
 #> Attaching package: 'terra'
@@ -169,7 +169,7 @@ SI_raster
 #> max value   :             20
 ```
 
-<img src="man/figures/README-Pixeltable23-1.png" width="70%" />
+<img src="man/figures/README-Pixeltable23-1.png" width="70%" style="display: block; margin: auto;" />
 
 IMPORTANT NOTICE: Prior to the assembly of the PixelTable, it is
 essential to ensure that all raster images are precisely aligned. In

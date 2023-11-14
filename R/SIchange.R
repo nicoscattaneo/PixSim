@@ -1,6 +1,6 @@
 #' Apply Site Index Changes to Simulated Forest Data
 #'
-#' This internal function applies changes in Site Index (SI) to the simulated forest data to reflect
+#' This internal function applies changes in Site Index (SI_m) to the simulated forest data to reflect
 #' alterations in growth potential over time. These changes in SI are translated into modifications
 #' of the stand age using functions specified in the
 #' `ModelsAndParameters` list.
@@ -24,6 +24,8 @@
 #'
 #' @return The function modifies `Data` by reference, updating the `Age` attribute to reflect
 #'         the applied SI changes. It returns invisibly.
+#'
+#' @export
 #' @importFrom data.table data.table
 #' @importFrom fst read_fst
 #' @examples

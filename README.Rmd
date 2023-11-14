@@ -141,7 +141,7 @@ list(Names = Names,
 
 Read and plot the Site Index (SI_m) raster.
 ```{r Pixeltable2, warning=FALSE}
-library(terra)
+library("terra")
 SI_raster <- rast(file.path(Dir, "SI_m.tif"))
 SI_raster
 ```
@@ -152,7 +152,7 @@ SI_df <- as.data.frame(SI_raster, xy = TRUE)
 names(SI_df) <- c("X_UTM32", "y_UTM32", "Site_Index_m")
 ```
 
-```{r Pixeltable23, echo = FALSE, warning=FALSE, out.width='70%'}
+```{r Pixeltable23, echo = FALSE, warning=FALSE, out.width='70%', fig.align='center'}
 ggplot(SI_df, aes(x = X_UTM32, y = y_UTM32, fill = Site_Index_m)) +
     geom_tile() +
     scale_fill_distiller(palette = "Spectral") +

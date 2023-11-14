@@ -26,7 +26,7 @@ The function modifies \code{Data} by reference, updating the \code{Age} attribut
 the applied SI changes. It returns invisibly.
 }
 \description{
-This internal function applies changes in Site Index (SI) to the simulated forest data to reflect
+This internal function applies changes in Site Index (SI_m) to the simulated forest data to reflect
 alterations in growth potential over time. These changes in SI are translated into modifications
 of the stand age using functions specified in the
 \code{ModelsAndParameters} list.
