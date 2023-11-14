@@ -91,7 +91,7 @@ Work in progress.
 
 Work in progress.
 
-```{r example3, echo = FALSE}
+```{r example3}
 ## Some code
 ```
 

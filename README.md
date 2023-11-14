@@ -82,6 +82,10 @@ Work in progress.
 
 Work in progress.
 
+``` r
+## Some code
+```
+
 ### Pixeltable
 
 A PixelTable is a dataframe-like object that groups data from various
