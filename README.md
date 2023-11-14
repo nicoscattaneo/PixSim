@@ -122,10 +122,23 @@ library(terra)
 #> 
 #>     shift
 SI_raster <- rast(file.path(Dir, "SI_m.tif"))
-plot(SI_raster, main = "Site Index (m)")
+SI_raster
+#> class       : SpatRaster 
+#> dimensions  : 1250, 625, 1  (nrow, ncol, nlyr)
+#> resolution  : 16, 16  (x, y)
+#> extent      : 664224, 674224, 6748512, 6768512  (xmin, xmax, ymin, ymax)
+#> coord. ref. : ETRS89 / UTM zone 32N (EPSG:25832) 
+#> source      : SI_m.tif 
+#> name        : Site index (m) 
+#> min value   :              6 
+#> max value   :             20
 ```
 
-<img src="man/figures/README-Pixeltable2-1.png" width="60%" />
+<img src="man/figures/README-Pixeltable23-1.png" width="60%" />
+
+    #>            used  (Mb) gc trigger  (Mb) max used  (Mb)
+    #> Ncells  1600772  85.5    2887731 154.3  2207937 118.0
+    #> Vcells 25228087 192.5   50146329 382.6 49872079 380.5
 
 IMPORTANT NOTICE: Prior to the assembly of the PixelTable, it is
 essential to ensure that all raster images are precisely aligned. In

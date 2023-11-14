@@ -116,10 +116,27 @@ list(Names = Names,
 ```
 
 Read and plot the Site Index raster.
-```{r Pixeltable2, warning=FALSE, out.width='60%'}
+```{r Pixeltable2, warning=FALSE}
 library(terra)
 SI_raster <- rast(file.path(Dir, "SI_m.tif"))
-plot(SI_raster, main = "Site Index (m)")
+SI_raster
+```
+
+```{r Pixeltable22, include = FALSE}
+library("ggplot2")
+SI_df <- as.data.frame(SI_raster, xy = TRUE)
+names(SI_df) <- c("X_UTM32", "y_UTM32", "Site_Index_m")
+```
+
+```{r Pixeltable23, echo = FALSE, warning=FALSE, out.width='60%'}
+ggplot(SI_df, aes(x = X_UTM32, y = y_UTM32, fill = Site_Index_m)) +
+    geom_tile() +
+    scale_fill_distiller(palette = "Spectral") +
+    labs(fill = "Site Index (m)") +
+    theme_minimal() +
+    coord_equal()
+rm(SI_df)
+gc()
 ```
 
 IMPORTANT NOTICE: Prior to the assembly of the PixelTable, it is essential to 
