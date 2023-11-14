@@ -134,11 +134,7 @@ SI_raster
 #> max value   :             20
 ```
 
-<img src="man/figures/README-Pixeltable23-1.png" width="60%" />
-
-    #>            used  (Mb) gc trigger  (Mb) max used  (Mb)
-    #> Ncells  1600772  85.5    2887731 154.3  2207937 118.0
-    #> Vcells 25228087 192.5   50146329 382.6 49872079 380.5
+<img src="man/figures/README-Pixeltable23-1.png" width="70%" />
 
 IMPORTANT NOTICE: Prior to the assembly of the PixelTable, it is
 essential to ensure that all raster images are precisely aligned. In

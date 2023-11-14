@@ -95,6 +95,7 @@ Work in progress.
 ## Some code
 ```
 
+
 ### Pixeltable
 A PixelTable is a dataframe-like object that groups data from various maps 
 containing forest resource information. It is a highly useful format that 
@@ -128,13 +129,16 @@ SI_df <- as.data.frame(SI_raster, xy = TRUE)
 names(SI_df) <- c("X_UTM32", "y_UTM32", "Site_Index_m")
 ```
 
-```{r Pixeltable23, echo = FALSE, warning=FALSE, out.width='60%'}
+```{r Pixeltable23, echo = FALSE, warning=FALSE, out.width='70%'}
 ggplot(SI_df, aes(x = X_UTM32, y = y_UTM32, fill = Site_Index_m)) +
     geom_tile() +
     scale_fill_distiller(palette = "Spectral") +
     labs(fill = "Site Index (m)") +
     theme_minimal() +
     coord_equal()
+```
+
+```{r Pixeltable24, include = FALSE}
 rm(SI_df)
 gc()
 ```
