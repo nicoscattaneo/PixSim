@@ -74,10 +74,32 @@ PixSim(Data = PixelTableCopy,
 
 ### Example 2
 
-Work in progress.
+There are also functions available to initialize pixels after the forest
+has been harvested:
 
 ``` r
-## Some code
+Functions <- list(GrowthModels = GrowthModels,
+                  RegFunction = RegFunction, 
+                  PostRegFunction = PostRegFunction)
+
+myMM <- ModelsAndParameters[[1]]
+mySSP <- c(1, 2, 3)
+
+Fold <- tempfile()
+dir.create(Fold)
+
+## See `?RegData` for a detailed description of this dataset.
+PixSim(Data = PixelTable,
+       Np = 10, 
+       nSpecies = mySSP,
+       functions = Functions,
+       WriteOut = TRUE,
+       LocalFldr = Fold,
+       ModelsAndParameters = myMM,
+       RegData = RegData)
+## Check the results
+## Results <- list.files(Fold, full.names = TRUE)
+## lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
 ```
 
 ### Example 3
@@ -90,10 +112,10 @@ Work in progress.
 
 ### Pixeltable
 
-A PixelTable is a dataframe-like object that groups data from various
-maps containing forest resource information. It is a highly useful
-format that offers flexibility for performing complex operations on the
-information contained in the maps.
+A PixelTable is a dataframe-like object that groups pixel-level
+information from various raster containing forest resource information.
+It is a highly useful format that offers flexibility for performing
+complex operations on the information contained in the maps.
 
 PixSim package contains raster files describing various forest resource
 variables in a 10x20 km region in central Norway. Similar raster maps

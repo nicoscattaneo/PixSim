@@ -7,7 +7,7 @@
 \format{
 A data frame with 24 rows and 9 variables:
 \describe{
-\item{SI_m}{Site index in meters, indicating the potential growth height of a species at a certain age.}
+\item{SI_m}{Site index in meters, indicating the potential growth height of a species at the specific age of 40 years.}
 \item{Species}{An integer code representing the species: 1 for Norway spruce, 2 for Scots pine, 3 for broadleaves (birch).}
 \item{Latency_yr}{Regeneration latency time in years after harvest.}
 \item{Age}{Age of the forest when trees reach 5 cm in diameter at breast height.}
