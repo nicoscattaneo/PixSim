@@ -125,7 +125,7 @@ SI_raster <- rast(file.path(Dir, "SI_m.tif"))
 plot(SI_raster, main = "Site Index (m)")
 ```
 
-<img src="man/figures/README-Pixeltable2-1.png" width="50%" />
+<img src="man/figures/README-Pixeltable2-1.png" width="60%" />
 
 IMPORTANT NOTICE: Prior to the assembly of the PixelTable, it is
 essential to ensure that all raster images are precisely aligned. In
@@ -134,7 +134,6 @@ instances where alignment is not accurate, employing tools such as
 in facilitating this critical alignment process.
 
 ``` r
-library(terra)
 ## Check rasters alignment
 unlist(lapply(lapply(Files, rast), crs, proj = TRUE))
 #> [1] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
@@ -145,6 +144,7 @@ unlist(lapply(lapply(Files, rast), crs, proj = TRUE))
 #> [6] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
 #> [7] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
 #> [8] "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+
 ## Check raster size
 do.call("rbind", lapply(lapply(Files, rast), dim))
 #>      [,1] [,2] [,3]

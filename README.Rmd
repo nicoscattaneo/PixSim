@@ -116,7 +116,7 @@ list(Names = Names,
 ```
 
 Read and plot the Site Index raster.
-```{r Pixeltable2, warning=FALSE, out.width='50%'}
+```{r Pixeltable2, warning=FALSE, out.width='60%'}
 library(terra)
 SI_raster <- rast(file.path(Dir, "SI_m.tif"))
 plot(SI_raster, main = "Site Index (m)")
@@ -129,9 +129,9 @@ alignment is not accurate, employing tools such as
 in facilitating this critical alignment process.
 
 ```{r Pixeltable3, warning=FALSE}
-library(terra)
 ## Check rasters alignment
 unlist(lapply(lapply(Files, rast), crs, proj = TRUE))
+
 ## Check raster size
 do.call("rbind", lapply(lapply(Files, rast), dim))
 ```
