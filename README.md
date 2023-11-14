@@ -110,10 +110,31 @@ PixSim(Data = PixelTable,
 
 ### Example 3
 
-Work in progress.
+Apply management
 
 ``` r
-## Some code
+Functions <- list(GrowthModels = GrowthModels,
+                  RegFunction = RegFunction, 
+                  PostRegFunction = PostRegFunction,
+                  SetAside = SetAside,
+                  ManagementFunction = ManagementFunction)
+
+Fold <- tempfile()
+dir.create(Fold)
+
+
+## Run simulations
+PixSim(Data = PixelTable,
+       Np = 5,
+       nSpecies = c(1, 2, 3),
+       functions = Functions,
+       WriteOut = TRUE,
+       LocalFldr = Fold,
+       ModelsAndParameters = ModelsAndParameters[[1]],
+       RegData = RegData,
+       SetAsidePercent = 20,
+       Harvest = 80, 
+       PixelSize = (16*16))
 ```
 
 ### Pixeltable
