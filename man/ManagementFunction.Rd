@@ -2,7 +2,7 @@
 % Please edit documentation in R/ManagementFunction.R
 \name{ManagementFunction}
 \alias{ManagementFunction}
-\title{Apply Forest Management within Simulation}
+\title{Apply Forest Management within a simulation}
 \usage{
 ManagementFunction(
   Data,

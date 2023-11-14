@@ -1,4 +1,4 @@
-#' Apply Forest Management within Simulation
+#' Apply Forest Management within a simulation
 #'
 #' This internal function simulates the harvesting process during a timestep of a forest growth simulation.
 #' It determines which stands can be harvested based on the regeneration period and harvests a specified
@@ -22,6 +22,7 @@
 #'
 #' @return The function modifies `Data` by reference, updating the attributes to reflect the harvested
 #'         volumes. It returns invisibly.
+#' @export
 #' @importFrom data.table data.table
 #' @importFrom fst write_fst
 #' @examples
