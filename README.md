@@ -25,7 +25,7 @@ devtools::install_github("nicoscattaneo/PixSim")
 
 ## General usage
 
-### Basic Forest Growth Simulation.
+### Basic Forest Growth Simulation
 
 Simulate 50 years of forest growth for a 10x20 km region in central
 Norway using stand-level growth models of the main species groups in
@@ -80,7 +80,7 @@ PixSim(Data = PixelTable,
 
 ------------------------------------------------------------------------
 
-### Use Forest Regeneration Routines.
+### Use Forest Regeneration Routines
 
 There are also functions available to initialize pixels after the forest
 has been harvested:
@@ -113,7 +113,7 @@ PixSim(Data = PixelTable,
 
 ------------------------------------------------------------------------
 
-### Apply Forest Management.
+### Apply Forest Management
 
 Harvest 80% of the total volume increase per time step. The `SetAside`
 function is also used to set environmental restrictions on 20% of each
@@ -221,7 +221,7 @@ fst::read_fst(Results[3], as.data.table = TRUE, from = 1, to = 5)
 
 ------------------------------------------------------------------------
 
-### Climate Change and Forest Growth.
+### Climate Change and Forest Growth
 
 The effects of climate change on forest growth can also be included in
 the simulations. The function `SIchange` applies climate-induced changes
