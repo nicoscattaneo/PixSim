@@ -116,8 +116,8 @@ PixSim(Data = PixelTable,
 ### Example 3
 
 Harvest 80% of the total volume increase per time step. The `SetAside`
-function is also used to conserve 20% of each forest stand that is never
-harvested.
+function is also used to set environmental restrictions on 20% of each
+forest stand that will never be harvested.
 
 ``` r
 ## See `?ManagementFunction` and `?SetAside` for a detailed description of 
@@ -172,8 +172,8 @@ lapply(Results, fst::read_fst,
 ```
 
 Three different files per simulation period are generated when the
-`ManagementFunction` is applied. For example, for the first time step
-(001), the following files are generated
+`ManagementFunction` is applied. For example, for the first simulated
+period (001), the following files are generated:
 
 ``` r
 Results <- list.files(Fold, pattern = "001")

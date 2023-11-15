@@ -117,7 +117,8 @@ PixSim(Data = PixelTable,
 ### Example 3
 
 Harvest 80% of the total volume increase per time step. The `SetAside` function 
-is also used to conserve 20% of each forest stand that is never harvested.
+is also used to set environmental restrictions on 20% of each forest stand 
+that will never be harvested.
 
 ```{r example3, warning=FALSE}
 ## See `?ManagementFunction` and `?SetAside` for a detailed description of 
@@ -158,8 +159,8 @@ lapply(Results, fst::read_fst,
 ```
 
 Three different files per simulation period are generated when 
-the `ManagementFunction` is applied. For example, for the first time step (001), 
-the following files are generated
+the `ManagementFunction` is applied. For example, for the first simulated period
+(001), the following files are generated:
 
 ```{r example32, warning=FALSE}
 Results <- list.files(Fold, pattern = "001")
@@ -171,16 +172,21 @@ Results <- list.files(Fold, full.names = T, pattern = "001")
 ```
 
 
+
 - The first file contains the simulated/projected forest data.
 ```{r example33, warning=FALSE}
 fst::read_fst(Results[1], as.data.table = TRUE, from = 1, to = 5)
 ```
+
+
 
 - The second file includes details on the harvesting objective (volumeGrowthCut) 
 and the total volume harvested (in cubic meters).
 ```{r example34, warning=FALSE}
 fst::read_fst(Results[2], as.data.table = TRUE, from = 1, to = 5)
 ```
+
+
 
 - The third file contains a data.table, with columns for Stand ID (Stand), the 
 mean and total volume per stand (mVol_m3ha and TVol_m3), the proportion of each 
@@ -189,6 +195,7 @@ particular stand has been harvested (Cut = 1) or not (Cut = 0).
 ```{r example35, warning=FALSE}
 fst::read_fst(Results[3], as.data.table = TRUE, from = 1, to = 5)
 ```
+
 
 ---
 
