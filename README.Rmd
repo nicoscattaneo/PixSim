@@ -37,11 +37,11 @@ devtools::install_github("nicoscattaneo/PixSim")
 ## General usage
 
 ### Example 1
-Simulate 15 years of forest growth for a 10x20 km region in central Norway using
+Simulate 50 years of forest growth for a 10x20 km region in central Norway using
 stand-level growth models of the main species groups in Norway. The simulation 
 is conducted in 5-year intervals, with the results of each time step saved 
 locally for further analysis.
-For detailed model information, see [Maleki et al. 2022](https://doi.org/10.1080/02827581.2022.2056632).
+For detailed model information, see [Maleki et al. (2022)](https://doi.org/10.1080/02827581.2022.2056632).
 
 ```{r example1, warning=FALSE}
 library("PixSim")
@@ -68,7 +68,7 @@ Fold <- tempfile()
 dir.create(Fold)
 
 PixSim(Data = PixelTable,
-       Np = 3, ## 3 5-year projections
+       Np = 10, ## 10 5-year projections
        nSpecies = mySSP,
        functions = Functions,
        WriteOut = TRUE,
@@ -135,7 +135,7 @@ dir.create(Fold)
 
 ## Run simulations
 PixSim(Data = PixelTable,
-       Np = 5,
+       Np = 10,
        nSpecies = c(1, 2, 3),
        functions = Functions,
        WriteOut = TRUE,
@@ -194,6 +194,46 @@ species in the total volume (TVol_m3), and a column indicating whether a
 particular stand has been harvested (Cut = 1) or not (Cut = 0).
 ```{r example35, warning=FALSE}
 fst::read_fst(Results[3], as.data.table = TRUE, from = 1, to = 5)
+```
+
+
+---
+
+### Example 4
+
+The effects of climate change on forest growth can also be included in the 
+simulations. The function `SIchange` applies climate-induced changes in forest 
+productivity. These changes are available in the `SI_changes` dataset and were 
+computed following the methodology of [Antón-Fernández et al. (2016)](https://doi.org/10.1139/cjfr-2015-0155).
+
+```{r example4, warning=FALSE}
+## See `?SIchange` for a detailed description of this function.
+Functions <- list(GrowthModels = GrowthModels,
+                  RegFunction = RegFunction, 
+                  PostRegFunction = PostRegFunction,
+                  SIchange = SIchange)
+
+## See `?read_SI_changes` for a detailed description of this dataset.
+SIChangePath <- system.file("extdata", "SI_changes.fst", package = "PixSim")
+## fst::read_fst(SIChangePath, from = 2100, to = 2105)
+
+Fold <- tempfile()
+dir.create(Fold)
+
+PixSim(Data = PixelTable,
+       Np = 10, 
+       nSpecies = c(1, 2, 3),
+       functions = Functions,
+       WriteOut = TRUE,
+       LocalFldr = Fold,
+       ModelsAndParameters = ModelsAndParameters[[1]],
+       RegData = RegData,
+       SIChangePath = SIChangePath)
+
+## Results <- list.files(Fold, full.names = TRUE)
+## lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
+
+
 ```
 
 
