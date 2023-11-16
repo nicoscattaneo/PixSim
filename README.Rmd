@@ -312,8 +312,8 @@ Raster <- rast(ncols = ncol(RasterInfo), nrows = nrow(RasterInfo),
                ymin = ymin(Dim), ymax = ymax(Dim),
                crs = crs(RasterInfo))
 
-Raster[cellFromXY(Raster, PixeTable1[, 1:2])] <- PixeTable1[[5]]
-names(Raster) <- names(PixeTable1)[5]
+Raster[cellFromXY(Raster, PixeTable1[, 1:2])] <- PixeTable1[[6]]
+names(Raster) <- names(PixeTable1)[6]
 Raster
 
 ```

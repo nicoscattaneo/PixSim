@@ -365,8 +365,8 @@ Raster <- rast(ncols = ncol(RasterInfo), nrows = nrow(RasterInfo),
                ymin = ymin(Dim), ymax = ymax(Dim),
                crs = crs(RasterInfo))
 
-Raster[cellFromXY(Raster, PixeTable1[, 1:2])] <- PixeTable1[[5]]
-names(Raster) <- names(PixeTable1)[5]
+Raster[cellFromXY(Raster, PixeTable1[, 1:2])] <- PixeTable1[[6]]
+names(Raster) <- names(PixeTable1)[6]
 Raster
 #> class       : SpatRaster 
 #> dimensions  : 1250, 625, 1  (nrow, ncol, nlyr)
@@ -374,7 +374,7 @@ Raster
 #> extent      : 664224, 674224, 6748512, 6768512  (xmin, xmax, ymin, ymax)
 #> coord. ref. : ETRS89 / UTM zone 32N (EPSG:25832) 
 #> source(s)   : memory
-#> name        :    N 
-#> min value   :    0 
-#> max value   : 1818
+#> name        : SI_m 
+#> min value   :    6 
+#> max value   :   20
 ```
