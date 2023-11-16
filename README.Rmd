@@ -67,6 +67,7 @@ mySSP <- c(1, 2, 3)
 Fold <- tempfile()
 dir.create(Fold)
 
+## Run simulations
 PixSim(Data = PixelTable,
        Np = 10, ## 10 5-year projections
        nSpecies = mySSP,
@@ -91,25 +92,16 @@ Functions <- list(GrowthModels = GrowthModels,
                   RegFunction = RegFunction, 
                   PostRegFunction = PostRegFunction)
 
-myMM <- ModelsAndParameters[[1]]
-mySSP <- c(1, 2, 3)
-
-Fold <- tempfile()
-dir.create(Fold)
-
 ## See `?RegData` for a detailed description of this dataset.
 PixSim(Data = PixelTable,
        Np = 10, 
-       nSpecies = mySSP,
+       nSpecies = c(1, 2, 3),
        functions = Functions,
        WriteOut = TRUE,
        LocalFldr = Fold,
-       ModelsAndParameters = myMM,
+       ModelsAndParameters = ModelsAndParameters[[1]],
        RegData = RegData)
 
-## Check the results
-## Results <- list.files(Fold, full.names = TRUE)
-## lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
 ```
 
 ---
@@ -128,11 +120,6 @@ Functions <- list(GrowthModels = GrowthModels,
                   SetAside = SetAside,
                   ManagementFunction = ManagementFunction)
 
-Fold <- tempfile()
-dir.create(Fold)
-
-
-## Run simulations
 PixSim(Data = PixelTable,
        Np = 10,
        nSpecies = c(1, 2, 3),
@@ -213,10 +200,6 @@ Functions <- list(GrowthModels = GrowthModels,
 
 ## See `?read_SI_changes` for a detailed description of this dataset.
 SIChangePath <- system.file("extdata", "SI_changes.fst", package = "PixSim")
-## fst::read_fst(SIChangePath, from = 2100, to = 2105)
-
-Fold <- tempfile()
-dir.create(Fold)
 
 PixSim(Data = PixelTable,
        Np = 10, 
@@ -227,10 +210,6 @@ PixSim(Data = PixelTable,
        ModelsAndParameters = ModelsAndParameters[[1]],
        RegData = RegData,
        SIChangePath = SIChangePath)
-
-## Results <- list.files(Fold, full.names = TRUE)
-## lapply(Results, fst::read_fst, as.data.table = TRUE, from = 1, to = 5)
-
 
 ```
 
