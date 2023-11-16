@@ -347,3 +347,34 @@ head(PixeTable1)
 ```
 
 This PixelTable is ready for use within the PixSim framework.
+
+------------------------------------------------------------------------
+
+### Bonus… Converting a PixelTable Back to a Raster
+
+Are you wondering how to retrieve your forest data as a raster image
+after running simulations? Here’s an example of how to do it!
+
+``` r
+
+## Remake the Site Index (SI_m) raster from the PixelTable.
+RasterInfo <- rast(Files[5])
+Dim <- ext(RasterInfo)
+Raster <- rast(ncols = ncol(RasterInfo), nrows = nrow(RasterInfo),
+               xmin = xmin(Dim), xmax = xmax(Dim),
+               ymin = ymin(Dim), ymax = ymax(Dim),
+               crs = crs(RasterInfo))
+
+Raster[cellFromXY(Raster, PixeTable1[, 1:2])] <- PixeTable1[[5]]
+names(Raster) <- names(PixeTable1)[5]
+Raster
+#> class       : SpatRaster 
+#> dimensions  : 1250, 625, 1  (nrow, ncol, nlyr)
+#> resolution  : 16, 16  (x, y)
+#> extent      : 664224, 674224, 6748512, 6768512  (xmin, xmax, ymin, ymax)
+#> coord. ref. : ETRS89 / UTM zone 32N (EPSG:25832) 
+#> source(s)   : memory
+#> name        :    N 
+#> min value   :    0 
+#> max value   : 1818
+```
