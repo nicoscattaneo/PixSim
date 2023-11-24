@@ -53,7 +53,7 @@ PixSim <- function(Data, Np, nSpecies, WriteOut = FALSE, LocalFldr = NULL, funct
     Ellipsis <- list(...)
 
     ## Initial checks
-    if (!is.data.table(Data)) {
+    if (!data.tabe::is.data.table(Data)) {
         stop("Data must be a data.table object")
     }
 
