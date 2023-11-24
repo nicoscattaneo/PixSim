@@ -86,7 +86,7 @@ ManagementFunction <- function(Data, Harvest, PixelSize,
             by = list(Stand, Species)
         ]
 
-        DataCut0 <- dcast(DataCut0, Stand ~ Species, value.var = "V1")
+        DataCut0 <- data.table::dcast(DataCut0, Stand ~ Species, value.var = "V1")
         invisible(lapply(nSpecies, function(XX) {
             if (!(any(names(DataCut0) == XX))) {
                 DataCut0[, (XX) := NA]
