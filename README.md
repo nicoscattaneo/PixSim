@@ -162,10 +162,9 @@ Three different files per simulation period are generated when the
 period (001), the following files are generated:
 
 ``` r
-Results <- list.files(Fold, pattern = "001")
+Results <- list.files(Fold, pattern = "001.fst")
 Results
-#> [1] "DataPred_0001.fst"  "DataPred_0010.fst"  "SR16Pred02_001.fst"
-#> [4] "SR16Pred03_001.fst"
+#> [1] "DataPred_0001.fst"  "SR16Pred02_001.fst" "SR16Pred03_001.fst"
 ```
 
 - The first file contains the simulated/projected forest data.
@@ -185,12 +184,8 @@ fst::read_fst(Results[1], as.data.table = TRUE, from = 1, to = 5)
 
 ``` r
 fst::read_fst(Results[2], as.data.table = TRUE, from = 1, to = 5)
-#>      H_m      N B_m2ha V_m3ha Age
-#> 1: 24.94 355.37  33.16 321.73 121
-#> 2: 24.56 402.31  36.44 350.01 115
-#> 3: 25.74 298.39  29.15 293.23 132
-#> 4: 26.13 406.91  36.45 382.99 135
-#> 5:    NA     NA     NA     NA   0
+#>    volumeGrowthCut volumeGrowthCutPerc
+#> 1:        200415.1                 80%
 ```
 
 - The third file contains a data.table, with columns for Stand ID
@@ -201,8 +196,12 @@ fst::read_fst(Results[2], as.data.table = TRUE, from = 1, to = 5)
 
 ``` r
 fst::read_fst(Results[3], as.data.table = TRUE, from = 1, to = 5)
-#>    volumeGrowthCut volumeGrowthCutPerc
-#> 1:        200415.1                 80%
+#>      Stand mVol_m3ha  TVol_m3 Species_1  Species_2 Species_3 Cut
+#> 1:   29485  698.6600 143.0856 1.0000000 0.00000000         0   1
+#> 2:  686275  698.4567 214.5659 1.0000000 0.00000000         0   1
+#> 3:  323830  607.6183 108.8852 0.7920831 0.20791694         0   1
+#> 4: 1235638  606.8028 279.6147 0.9199772 0.08002284         0   1
+#> 5:  542402  591.2865 378.4233 0.9365843 0.06341567         0   1
 ```
 
 ------------------------------------------------------------------------
