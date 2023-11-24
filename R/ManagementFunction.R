@@ -118,7 +118,7 @@ ManagementFunction <- function(Data, Harvest, PixelSize,
         }
 
         DataCut[, Cut := NULL]
-        setnames(DataCut, "Cut2", "Cut")
+        data.table::setnames(DataCut, "Cut2", "Cut")
         Data[, V_m3ha_0.5 := NULL]
 
         ## Set to 0 the harvested pixels

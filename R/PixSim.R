@@ -123,7 +123,7 @@ PixSim <- function(Data, Np, nSpecies, WriteOut = FALSE, LocalFldr = NULL, funct
 
         if (WriteOut) {
             ProjTosave <- Data[, .(H_m_2, N_2, B_m2ha_2, V_m3ha_2, CronAge_2)]
-            setnames(ProjTosave,
+            data.table::setnames(ProjTosave,
                      old = c("H_m_2", "N_2", "B_m2ha_2", "V_m3ha_2", "CronAge_2"),
                      new = c("H_m", "N", "B_m2ha", "V_m3ha", "Age"))
             ProjTosave <- ProjTosave[, round(.SD, 2), .SDcols = 1:5]
@@ -135,7 +135,7 @@ PixSim <- function(Data, Np, nSpecies, WriteOut = FALSE, LocalFldr = NULL, funct
 
         ## Reset Data to t0 before starting a new simulation period
         Data[, c("Age", "N", "H_m", "B_m2ha", "V_m3ha", "CronAge") := NULL]
-        setnames(Data,
+        data.table::setnames(Data,
                  old = c("H_m_2", "N_2", "B_m2ha_2", "V_m3ha_2", "Age_2", "CronAge_2"),
                  new = c("H_m", "N", "B_m2ha", "V_m3ha", "Age", "CronAge"))
         gc()
