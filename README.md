@@ -27,11 +27,11 @@ devtools::install_github("nicoscattaneo/PixSim")
 
 ### Basic Forest Growth Simulation
 
-Simulate 50 years of forest growth for a 10x20 km region in central
-Norway using stand-level growth models of the main species groups in
-Norway. The simulation is conducted in 5-year intervals, with the
-results of each time step saved locally for further analysis. For
-detailed model information, see [Maleki et
+Simulate 50 years of forest growth for a 10x20 km region (16x16 m
+resolution) in central Norway using stand-level growth models of the
+main species groups in Norway. The simulation is conducted in 5-year
+intervals, with the results of each time step saved locally for further
+analysis. For detailed model information, see [Maleki et
 al. (2022)](https://doi.org/10.1080/02827581.2022.2056632).
 
 ``` r
@@ -164,7 +164,7 @@ period (001), the following files are generated:
 ``` r
 Results <- list.files(Fold, pattern = "001.fst")
 Results
-#> [1] "DataPred_0001.fst"  "SR16Pred02_001.fst" "SR16Pred03_001.fst"
+#> [1] "DataPred_0001.fst"  "DataPred02_001.fst" "DataPred03_001.fst"
 ```
 
 - The first file contains the simulated/projected forest data.

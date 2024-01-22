@@ -134,8 +134,8 @@ ManagementFunction <- function(Data, Harvest, PixelSize,
             )
             ProjTosave3 <- DataCut
 
-            nameTosave2 <- paste0(TmpFldR, "/", "SR16Pred02_", sprintf("%03d", Round), ".fst")
-            nameTosave3 <- paste0(TmpFldR, "/", "SR16Pred03_", sprintf("%03d", Round), ".fst")
+            nameTosave2 <- paste0(TmpFldR, "/", "DataPred02_", sprintf("%03d", Round), ".fst")
+            nameTosave3 <- paste0(TmpFldR, "/", "DataPred03_", sprintf("%03d", Round), ".fst")
 
             fst::write_fst(ProjTosave2, nameTosave2, compress = 100)
             fst::write_fst(ProjTosave3, nameTosave3, compress = 100)

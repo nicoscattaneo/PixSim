@@ -37,7 +37,7 @@ devtools::install_github("nicoscattaneo/PixSim")
 ## General usage
 
 ### Basic Forest Growth Simulation
-Simulate 50 years of forest growth for a 10x20 km region in central Norway using
+Simulate 50 years of forest growth for a 10x20 km region (16x16 m resolution) in central Norway using
 stand-level growth models of the main species groups in Norway. The simulation 
 is conducted in 5-year intervals, with the results of each time step saved 
 locally for further analysis.
