@@ -5,15 +5,15 @@
 
 <img src="inst/extdata/logo.png" align="right" width="25%" />
 
-# PixSim
+### PixSim
 
-## Overview
+### Overview
 
 **PixSim** is a flexible, cross-platform, open-source tool designed for
 stand-level forest growth simulations. It operates at the pixel level
 using high-resolution, wall-to-wall forest resource maps.
 
-## Installation
+### Installation
 
 You can install the development version of PixSim from
 [GitHub](https://github.com/) with:
@@ -23,7 +23,7 @@ You can install the development version of PixSim from
 devtools::install_github("nicoscattaneo/PixSim")
 ```
 
-## General usage
+### General usage
 
 ### Basic Forest Growth Simulation
 
