@@ -8,6 +8,13 @@
 \description{
 Perform large-scale high-resolution forest growth simulations.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/nicoscattaneo/PixSim}
+}
+
+}
 \author{
 \strong{Maintainer}: Nicolas Cattaneo \email{nicolas.cattaneo@nibio.no} (\href{https://orcid.org/0000-0002-1955-1174}{ORCID})
 
